@@ -21,7 +21,7 @@ it('calls onClick when clicked', async () => {
 it('uses type="button" by default' , () => {
     render(<Button>Save</Button>)
     const button = screen.getByRole('button' , {name : 'Save'})
-    expect(button).toHaveAttribute('type' , 'default')
+    expect(button).toHaveAttribute('type' , 'button')
 })
 
 it('the type can be overridden',() => {
@@ -59,5 +59,5 @@ it("forwards the ref to the button element" , () => {
 
 it('passes native attributes such as aria-label', () => {
   render(<Button aria-label="Close">X</Button>)
-  expect(screen.getByRole('button', { name: 'X' })).toBeInTheDocument()
+  expect(screen.getByRole('button', { name: 'Close' })).toBeInTheDocument()
 })
